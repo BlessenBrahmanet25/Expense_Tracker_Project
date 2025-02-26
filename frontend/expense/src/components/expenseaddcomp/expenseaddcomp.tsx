@@ -43,6 +43,16 @@ export const ExpenseAddComp = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="expenseandincomediv">
+                        <div className="expensecstmdiv">
+                            <h1>Expense</h1>
+                            <h2>Rs {balance}</h2>
+                        </div>
+                        <div className="expensecstmdiv">
+                            <h1>Income</h1>
+                            <h2>Rs {balance}</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
