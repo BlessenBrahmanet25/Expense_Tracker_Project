@@ -12,7 +12,7 @@ const HomeComp = () => {
                         <h2>Keep Track of Your Expenses</h2>
                     </div>
                     <div className="homechilddivtwo">
-                        <a href="#" className="buttoncstm">Get Started</a>
+                        <a href="/expenseadd" className="buttoncstm">Get Started</a>
                     </div>
                 </div>
             </div>
