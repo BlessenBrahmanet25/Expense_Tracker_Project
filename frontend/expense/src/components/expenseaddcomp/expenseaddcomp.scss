@@ -1,0 +1,166 @@
+$box-shadow-cstm : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+$background-color-cstm : #f6f8fa;
+
+.expenseparentdiv {
+
+    border: 2px solid black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expensechilddiv {
+
+    width: 50%;
+    height: 480px;
+    box-shadow: $box-shadow-cstm;
+    background-color: $background-color-cstm;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.expensechilddiv h1 {
+
+    text-align: center;
+}
+
+.expensebalancediv {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.balancediv h1 {
+
+    margin: 0px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cancelbuttoncstm {
+
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    max-width: 200px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    transition: all .7s;
+    outline: none;
+    border: 1px solid red;
+}
+
+.cancelbuttoncstm:hover {
+    box-shadow: inset 0px 70px 0px 0px red;
+    border: 1px solid black;
+    outline: none;
+}
+
+.expenseshowingmaindiv {
+
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inputtextdivcstm {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px 0px;
+}
+
+.inputtextdivcstm input {
+
+    width: 100%;
+    height: 30px;
+    padding: 0px 10px;
+    outline: none;
+    border: 1px solid #676767;
+}
+
+.radiobtnscstmdiv {
+
+    width: 196px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radiobtnone {
+
+    height: 20px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    gap: 10px;
+}
+
+.radiobtnone p {
+
+    font-size: 14px;
+}
+
+.radioclickone {
+
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: $box-shadow-cstm;
+}
+
+.radioactive {
+
+    background-color: green;
+}
+
+.buttoncstmaddtransaction {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnaddtransactioncstm {
+
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    min-width: 120px;
+    max-width: 200px;
+    padding: 0px 10px;
+    border: 1px solid green;
+    transition: all .7s;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.btnaddtransactioncstm:hover {
+
+    border: 1px solid black;
+}
