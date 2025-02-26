@@ -1,0 +1,144 @@
+$box-shadow-cstm : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+$background-color-cstm : #f6f8fa;
+
+.homeparentdiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homechilddiv {
+
+    background-color: $background-color-cstm;
+    box-shadow: $box-shadow-cstm;
+    width: 500px;
+    height: 240px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all .7s;
+}
+
+.homechilddiv .homechilddivone h1 {
+
+    text-align: center;
+    transition: all .7s;
+}
+
+.homechilddiv .homechilddivone h2 {
+
+    font-size: 18px;
+    opacity: .7;
+    text-align: center;
+    transition: all .7s;
+}
+
+.homechilddivtwo {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttoncstm {
+
+    text-decoration: none;
+    background-color: #000000;
+    min-width: 100px;
+    max-width: 200px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0px 10px;
+    transition: all .7s;
+}
+
+
+.homechilddiv:hover {
+
+    background-color: #000000;
+
+    .buttoncstm {
+
+        background-color: $background-color-cstm;
+        color: black;
+        transition: all .7s;
+    }
+
+    .homechilddivone h1 {
+
+        color: white;
+        opacity: 1;
+    }
+
+    .homechilddivone h2 {
+
+        color: $background-color-cstm;
+        opacity: .7;
+    }
+
+    .buttoncstm:hover {
+
+        border: 1px solid #ffffff;
+        box-shadow: inset 0px 70px 0px 0px #000000;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .homechilddiv {
+
+        width: 74%;
+        height: 200px;
+    }
+
+    .buttoncstm {
+
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .homechilddiv .homechilddivone h2 {
+
+        font-size: 16px;
+    }
+
+    .homechilddiv .homechilddivone h1 {
+
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .homechilddiv {
+
+        width: 80%;
+        padding: 10px;
+        height: 160px;
+    }
+
+    .homechilddiv .homechilddivone h2 {
+
+        font-size: 14px;
+    }
+
+    .homechilddiv .homechilddivone h1 {
+
+        font-size: 22px;
+    }
+
+    .buttoncstm {
+
+        font-size: 12px;
+        height: 30px;
+    }
+}

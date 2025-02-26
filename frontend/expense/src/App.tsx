@@ -13,6 +13,12 @@ const App = () => {
             <>
               <HomeComp />
             </>} />
+
+          <Route path='/expenseadd' element={
+            <>
+
+            </>
+          } />
         </Routes>
       </Router>
     </>
