@@ -114,7 +114,7 @@ export const ExpenseAddComp = () => {
                                 </div>
                             </div>
                             {errorTrue && (
-                                radiobtnone == false && radiobtntwo == false ? (<>
+                                radiobtnone === false && radiobtntwo === false ? (<>
                                     <div className="buttonnotclickedcstmdiv">
                                         <p style={{ color: 'red', margin: '0px' }}>{error}</p>
                                     </div>
@@ -143,7 +143,7 @@ export const ExpenseAddComp = () => {
                             <input type="Search" className="searchtransactioncstm" placeholder="Search for transactions ..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                         </div>
                         {
-                            radiobtnone == true || radiobtntwo == true ? (
+                            radiobtnone === true || radiobtntwo === true ? (
                                 <>
                                     {filteredTransactions.length > 0 ?
                                         (filteredTransactions.map((items) => (
