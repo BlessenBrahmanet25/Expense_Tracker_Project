@@ -9,14 +9,28 @@ export const ExpenseAddComp = () => {
     const [balance, setBalance] = useState(0);
     const [radiobtnone, setRadiobtnone] = useState(false);
     const [radiobtntwo, setRadiobtntwo] = useState(false);
+    const [checked, setChecked] = useState<string | null>(null);
+    const [errorTrue, setErrorTrue] = useState(false);
+    const [error, setError] = useState('');
+
     const Handleradiobtnone = () => {
         setRadiobtnone(!radiobtnone)
         setRadiobtntwo(false)
+        setChecked('Expense')
+        setErrorTrue(false)
     }
 
     const Handleradiobtntwo = () => {
         setRadiobtntwo(!radiobtntwo)
         setRadiobtnone(false)
+        setChecked('Income')
+        setErrorTrue(false)
+    }
+
+    const HandleAddtransaction = () => {
+
+        setErrorTrue(true)
+        setError("Please select either Expense or Income")
     }
     return (
         <>
@@ -38,8 +52,17 @@ export const ExpenseAddComp = () => {
                                     <p>Income</p>
                                 </div>
                             </div>
+                            {errorTrue && (
+                                radiobtnone == false && radiobtntwo == false ? (<>
+                                    <div className="buttonnotclickedcstmdiv">
+                                        <p style={{ color: 'red', margin: '0px' }}>{error}</p>
+                                    </div>
+                                </>) : (<>
+
+                                </>)
+                            )}
                             <div className="buttoncstmaddtransaction">
-                                <a href="#" className="btnaddtransactioncstm">Add Transaction</a>
+                                <a href="#" className="btnaddtransactioncstm" onClick={HandleAddtransaction}>Add Transaction</a>
                             </div>
                         </div>
                     </div>
@@ -51,6 +74,22 @@ export const ExpenseAddComp = () => {
                         <div className="expensecstmdiv">
                             <h1>Income</h1>
                             <h2>Rs {balance}</h2>
+                        </div>
+                    </div>
+                    <div className="Transactionhistory">
+                        <h1>Transactions</h1>
+                        <div className="searchtransactiondiv">
+                            <input type="Search" className="searchtransactioncstm" placeholder="Search for transactions ..." />
+                        </div>
+                        <div className="transactionallhistory borderrightcstm_red">
+                            <p>Label</p>
+                            <p>Amount</p>
+                            <a href="#" className="removecstmbtn">Remove</a>
+                        </div>
+                        <div className="transactionallhistory borderrightcstm_green">
+                            <p>Label</p>
+                            <p>Amount</p>
+                            <a href="#" className="removecstmbtn">Remove</a>
                         </div>
                     </div>
                 </div>
