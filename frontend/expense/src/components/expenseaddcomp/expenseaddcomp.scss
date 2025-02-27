@@ -199,6 +199,10 @@ $background-color-cstm : #f6f8fa;
 
     margin: 0px;
     font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .Transactionhistory {
@@ -276,4 +280,120 @@ $background-color-cstm : #f6f8fa;
 .removecstmbtn:hover {
 
     border: 1px solid black;
+}
+
+.notransactionfoundcstm {
+
+    text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+    .expensechilddiv {
+
+        width: 70%;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .expensechilddiv {
+        width: 80%;
+    }
+
+    .expensechilddiv h1 {
+        font-size: 30px;
+    }
+
+    .balancediv h1 {
+        font-size: 20px;
+    }
+
+    .expensecstmdiv h1 {
+        font-size: 18px;
+    }
+
+    .expensecstmdiv h2 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .expensechilddiv {
+        width: 90%;
+    }
+
+    .expensechilddiv h1 {
+        font-size: 22px;
+    }
+
+    .balancediv h1 {
+        font-size: 12px;
+    }
+
+    .expensecstmdiv h1 {
+        font-size: 14px;
+    }
+
+    .expensecstmdiv h2 {
+        font-size: 10px;
+    }
+
+    .inputtextdivcstm input {
+        font-size: 10px;
+        height: 30px;
+    }
+
+    .radiobtnone p {
+        font-size: 12px;
+    }
+
+    .radioclickone {
+        width: 9px;
+        height: 9px;
+    }
+
+    .searchtransactioncstm {
+
+        font-size: 10px;
+        height: 30px;
+    }
+
+    .cancelbuttoncstm {
+
+        font-size: 10px;
+        height: 20px;
+        min-width: 60px;
+    }
+
+    .btnaddtransactioncstm {
+
+        font-size: 10px;
+        height: 20px;
+        min-width: 100px;
+    }
+
+    .removecstmbtn {
+
+        font-size: 10px;
+        height: 20px;
+        min-width: 60px;
+    }
+
+    .transactionallhistory {
+
+        height: 36px;
+        font-size: 10px;
+        padding: 0px 10px;
+    }
+
+    .buttonnotclickedcstmdiv p {
+
+        font-size: 12px;
+    }
+
+    .notransactionfoundcstm {
+
+        font-size: 12px;
+    }
+
 }
