@@ -20,7 +20,7 @@ export const ExpenseAddComp = () => {
     const [radiobtnone, setRadiobtnone] = useState(false);
     const [radiobtntwo, setRadiobtntwo] = useState(false);
     const [checked, setChecked] = useState<string | null>(null);
-    const [amount, setAmount] = useState("")
+    const [amount, setAmount] = useState<number | null>(null);
     const [label, setLabel] = useState("")
     const [errorTrue, setErrorTrue] = useState(false);
     const [error, setError] = useState('');
@@ -47,7 +47,7 @@ export const ExpenseAddComp = () => {
             const newTransaction: TransactionProps = {
                 id: Date.now(),
                 type,
-                amount: parseFloat(amount),
+                amount: Number(amount),
                 label,
             };
 
@@ -55,14 +55,14 @@ export const ExpenseAddComp = () => {
 
             if (type === "Expense") {
 
-                setBalance((prev) => prev - parseFloat(amount));
-                setExpense((prev) => prev + parseFloat(amount))
+                setBalance((prev) => prev - Number(amount));
+                setExpense((prev) => prev + Number(amount))
             } else {
-                setBalance((prev) => prev + parseFloat(amount));
-                setIncome((prev) => prev + parseFloat(amount))
+                setBalance((prev) => prev + Number(amount));
+                setIncome((prev) => prev + Number(amount))
             }
 
-            setAmount("");
+            // setAmount(0);
             setLabel("");
         }
     }
@@ -102,7 +102,7 @@ export const ExpenseAddComp = () => {
                     <div className="expenseshowingmaindiv">
                         <div className="inputtextdivcstm">
                             <input type="text" placeholder="Enter Label ( like Groceries, Freelancing etc ...) " value={label} onChange={(e) => setLabel(e.target.value)} maxLength={14} />
-                            <input type="text" placeholder="Enter Amount" value={amount} onChange={(e) => setAmount(e.target.value)} maxLength={10} />
+                            <input type="number" placeholder="Enter Amount" value={amount ?? ""} onChange={(e) => setAmount(e.target.value ? parseFloat(e.target.value) : null)} maxLength={10} />
                             <div className="radiobtnscstmdiv">
                                 <div className="radiobtnone">
                                     <div className={`radioclickone ${radiobtnone ? ("radioactive") : ("")}`} onClick={Handleradiobtnone}></div>
