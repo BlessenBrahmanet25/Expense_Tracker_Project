@@ -29,6 +29,8 @@ export const ExpenseAddComp = () => {
     const [expense, setExpense] = useState(0);
     const [income, setIncome] = useState(0);
     const [searchQuery, setSearchQuery] = useState("");
+    const [amountError, setAmountError] = useState("");
+    const [labelError, setLabelError] = useState("");
 
     const filteredTransactions = transactions.filter((transaction) =>
         transaction.label.toLowerCase().includes(searchQuery.toLowerCase())
@@ -93,6 +95,32 @@ export const ExpenseAddComp = () => {
         setType("Income")
     }
 
+    const HandleAmountrange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        if (!value) {
+            return null
+        }
+        if (value.length < 7) {
+            setAmount(e.target.value ? parseFloat(e.target.value) : null)
+            setAmountError("")
+        } else {
+            setAmountError("Max Digits Reached")
+        }
+    }
+
+    const HandleCharacterrange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        if (!value) {
+            return null
+        }
+        if (value.length < 15) {
+            setLabel(e.target.value)
+            setLabelError("")
+        } else {
+            setLabelError("Max Characters Reached")
+        }
+    }
+
     return (
         <>
             <div className="expenseparentdiv">
@@ -101,8 +129,14 @@ export const ExpenseAddComp = () => {
                     <BalanceShowingdivcomp main_balance={balance} />
                     <div className="expenseshowingmaindiv">
                         <div className="inputtextdivcstm">
-                            <input type="text" placeholder="Enter Label ( like Groceries, Freelancing etc ...) " value={label} onChange={(e) => setLabel(e.target.value)} maxLength={14} />
-                            <input type="number" placeholder="Enter Amount" value={amount ?? ""} onChange={(e) => setAmount(e.target.value ? parseFloat(e.target.value) : null)} maxLength={10} />
+                            <input type="text" placeholder="Enter Label ( like Groceries, Freelancing etc ...) " value={label} onChange={HandleCharacterrange} />
+                            {labelError && (
+                                <p style={{ color: 'red', margin: '0px', width: '100%' }} className="fontsizeerror">{labelError}</p>
+                            )}
+                            <input type="number" placeholder="Enter Amount" value={amount ?? ""} onChange={HandleAmountrange} />
+                            {amountError && (
+                                <p style={{ color: 'red', margin: '0px', width: '100%' }} className="fontsizeerror">{amountError}</p>
+                            )}
                             <div className="radiobtnscstmdiv">
                                 <div className="radiobtnone">
                                     <div className={`radioclickone ${radiobtnone ? ("radioactive") : ("")}`} onClick={Handleradiobtnone}></div>

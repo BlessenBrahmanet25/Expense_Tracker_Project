@@ -287,6 +287,15 @@ $background-color-cstm : #f6f8fa;
     text-align: center;
 }
 
+.fontsizeerror {
+    font-size: 16px;
+}
+
+.buttonnotclickedcstmdiv p {
+
+    font-size: 16px;
+}
+
 @media screen and (max-width: 991px) {
     .expensechilddiv {
 
@@ -315,6 +324,16 @@ $background-color-cstm : #f6f8fa;
     .expensecstmdiv h2 {
         font-size: 15px;
     }
+
+    .fontsizeerror {
+        font-size: 12px;
+    }
+
+    .buttonnotclickedcstmdiv p {
+
+        font-size: 12px;
+    }
+
 }
 
 @media screen and (max-width: 575px) {
@@ -388,12 +407,17 @@ $background-color-cstm : #f6f8fa;
 
     .buttonnotclickedcstmdiv p {
 
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .notransactionfoundcstm {
 
         font-size: 12px;
     }
+
+    .fontsizeerror {
+        font-size: 10px;
+    }
+
 
 }
